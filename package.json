@@ -1,0 +1,14 @@
+{
+  "name": "dpromise",
+  "version": "1.0.0",
+  "description": "sth like Promise",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "promise"
+  ],
+  "author": "asher",
+  "license": "MIT"
+}
