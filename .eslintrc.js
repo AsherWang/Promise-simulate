@@ -6,27 +6,11 @@ module.exports = {
   env: {
     browser: true,
   },
-  // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-  // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-  extends: ['plugin:vue/essential', 'airbnb-base'],
-  // required to lint *.vue files
-  plugins: [
-    'vue'
-  ],
-  // check if imports actually resolve
-  settings: {
-    'import/resolver': {
-      webpack: {
-        config: 'build/webpack.base.conf.js'
-      }
-    }
-  },
+  extends: ['airbnb-base'],
   // add your custom rules here
   rules: {
-    // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
-      js: 'never',
-      vue: 'never'
+      js: 'never'
     }],
     // disallow reassignment of function parameters
     // disallow parameter object manipulation except for specific exclusions
@@ -41,12 +25,9 @@ module.exports = {
     "no-shadow": ["error", { "allow": ["state"] }],
     "linebreak-style": ["off", "windows"],
     "eslint no-unused-expressions": 0,
-    // allow optionalDependencies
-    'import/no-extraneous-dependencies': ['error', {
-      optionalDependencies: ['test/unit/index.js']
-    }],
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': 'error',
+    'no-console': 'off',
+    'class-methods-use-this': 'off',
   }
 }
